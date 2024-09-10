@@ -15,11 +15,11 @@ def mainroute():
 
 @App.route('/averageteste', methods=['GET'])
 def sumteste():
-	list = [1, 2, 3, 4, 6]
+	list = [1, 2, 3, 4, '6']
 	try:
 		return jsonify(average(list))
 	except Exception as e:
-		return jsonify([str(e), ])
+		return jsonify(['Invalid value: input must be a list of integer values', str(e)])
 
 
 if __name__ == '__main__':
