@@ -13,10 +13,13 @@ def mainroute():
 	return jsonify('Hello World')
 
 
-@App.route('/sumteste', methods=['GET'])
+@App.route('/averageteste', methods=['GET'])
 def sumteste():
-	list = [1, 2, 3, 4, 540]
-	return jsonify(sumNumbrs(list))
+	list = [1, 2, 3, 4, 6]
+	try:
+		return jsonify(average(list))
+	except Exception as e:
+		return jsonify([str(e), ])
 
 
 if __name__ == '__main__':
