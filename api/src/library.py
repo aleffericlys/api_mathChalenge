@@ -9,7 +9,7 @@ class Numbers:
 
 	def average(numbres: list[int]) -> float:
 		value  = sum(numbres)
-		return float(value / len(numbres))
+		return Number.divide(value, len(numbres))
 	
 class Number:
 
@@ -17,4 +17,4 @@ class Number:
 			return a + b
 
 	def divide(a: int, b : int) -> float:
-		return float(a + b)
+		return float(a / b)
