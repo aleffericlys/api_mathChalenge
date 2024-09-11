@@ -18,19 +18,27 @@ Calcula a soma de uma lista de números inteiros fornecidos no corpo da requisi�
     }
     ```
 
-- **Resposta de Sucesso** (`200 OK`):
+  - **Resposta de Sucesso** (`200 OK`):
     ```json
     {
       "sum": 10
     }
     ```
-- **Resposta de Erro** (`400 Bad Request`):
-    ```json
-    [
-      "Invalid value: input must be a list of integer values",
-      "unsupported operand type(s) for +: 'int' and 'str'"
-    ]
-    ```
+  - **Respostas de Erro** (`400 Bad Request`):
+    - **Erro 1**: Quando o valor fornecido é apenas um valor inteiro fora de uma lista.
+		```json
+		[
+		"Invalid value: input must be a list of integer values",
+		"'int' object is not iterable"
+		]
+		```
+    - **Erro 2**: Quando o valor fornecido é uma lista de números inteiros  com uma string ou char no meio, uma lista de strings ou char ou apenas uma string ou char.
+		```json
+		[
+		"Invalid value: input must be a list of integer values",
+		"unsupported operand type(s) for +: 'int' and 'str'"
+		]
+		```
 
 ### 2. `/average` (POST)
 Calcula a média de uma lista de números inteiros fornecidos no corpo da requisição.
@@ -45,19 +53,35 @@ Calcula a média de uma lista de números inteiros fornecidos no corpo da requis
     }
     ```
 
-- **Resposta de Sucesso** (`200 OK`):
+  - **Resposta de Sucesso** (`200 OK`):
     ```json
     {
       "average": 2.5
     }
     ```
-- **Resposta de Erro** (`400 Bad Request`):
-    ```json
-    [
-      "Invalid value: input must be a list of integer values",
-      "unsupported operand type(s) for +: 'int' and 'str'"
-    ]
-    ```
+  - **Resposta de Erro** (`400 Bad Request`):
+    - **Erro 1**: Quando o valor fornecido é apenas um valor inteiro fora de uma lista.
+		```json
+		[
+		"Invalid value: input must be a list of integer values",
+		"'int' object is not iterable"
+		]
+		```
+    - **Erro 2**: Quando o valor fornecido é uma lista de números inteiros  com uma string ou char no meio, uma lista de strings ou char ou apenas uma string ou char.
+		```json
+		[
+		"Invalid value: input must be a list of integer values",
+		"unsupported operand type(s) for +: 'int' and 'str'"
+		]
+		```
+    - **Erro 3**: Quando o valor fornecido é uma lista vazia no endpoint.
+		```json
+		[
+		"Invalid value: input must be a list of integer values",
+		"division by zero"
+		]
+
+		```
 
 ---
 
@@ -86,31 +110,6 @@ python api/main.py
 ```
 A API estará rodando em: `http://localhost:3000`
 
-## Tratamento de erros
-A API retorna um código de status HTTP 400 em caso de erro de validação, junto com uma mensagem explicativa no corpo da resposta. 
-- ### Exemplos de erros possíveis:
-- **Erro 1**: Quando o valor fornecido é apenas um valor inteiro fora de uma lista.
-```json
-[
-  "Invalid value: input must be a list of integer values",
-  "'int' object is not iterable"
-]
-```
-- **Erro 2**: Quando o valor fornecido é uma lista de números inteiros  com uma string ou char no meio, uma lista de strings ou char ou apenas uma string ou char.
-```json
-[
-  "Invalid value: input must be a list of integer values",
-  "unsupported operand type(s) for +: 'int' and 'str'"
-]
-```
-- **Erro 3**: Quando o valor fornecido é uma lista vazia no endpoint `/average`.
-```json
-[
-  "Invalid value: input must be a list of integer values",
-  "division by zero"
-]
-
-```
 ## Testando a API com insominia
 Aqui estão exemplos de como testar os endpoints usando o Insomnia:
 
