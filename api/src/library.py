@@ -1,6 +1,4 @@
 class Numbers:
-	def __init__(self) -> None:
-		pass
 
 	def sum(numbers: list[int]) -> int:
 		value = 0
@@ -14,8 +12,6 @@ class Numbers:
 		return float(value / len(numbres))
 	
 class Number:
-	def __init__(self) -> None:
-		pass
 
 	def sum(a: int, b : int) -> int:
 			return a + b
