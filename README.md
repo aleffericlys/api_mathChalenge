@@ -153,11 +153,11 @@ a estrutura das pastas está organizada da seguinte maneira:
 │
 ├── /api        # Pasta da biblioteca de funções
 │	├── /src        # Pasta da biblioteca de funções
-│   │	└── library.py      # Biblioteca com as funções de soma e média
-│	│
+│	│	└── library.py      # Biblioteca com as funções de soma e média
+│	│	
 │	├── /tests 	# Pasta de testes unitários
-│	│   └── test_library.py # Testes unitários
-│	│
+│	│	└── test_library.py # Testes unitários
+│	│	
 │	└── main.py       # Arquivo principal da API
 ├── requirements.txt    # Arquivo de dependências
 ├── .gitignore       # Arquivo de configuração do git
