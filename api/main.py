@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from src.library import sumNumbrs, average
+from src.library import Numbers
 
 App = Flask('mathChallenge')
 App.config.from_object(__name__)
@@ -12,7 +12,7 @@ CORS(App)
 def sum():
 	try:
 		data = request.get_json()
-		return jsonify({"sum": sumNumbrs(data)})
+		return jsonify({"sum": Numbers.sum(data)})
 	except Exception as e:
 		return jsonify(['Invalid value: input must be a list of integer values', str(e)])
 
@@ -20,7 +20,7 @@ def sum():
 def averageN():
 	try:
 		data = request.get_json()
-		return jsonify({"average": average(data)})
+		return jsonify({"average": Numbers.average(data)})
 	except Exception as e:
 		return jsonify(['Invalid value: input must be a list of integer values', str(e)])
 
